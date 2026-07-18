@@ -5,6 +5,7 @@
 int main(void) {
 
     char str[MAX] = "\0";
+    char rev[MAX] = "\0";
     char *ch = NULL;
 
     printf("Type a string (max of 32 characters): ");
@@ -33,7 +34,14 @@ int main(void) {
         }
     }
 
-    printf("%s\n", str);
+    size_t index = 0;
+    for (int i = (int)(strlen(str) - 1); i >= 0; i--) {
+        rev[index] = str[i];
+        index++;
+    }
+
+    printf("Initial string: %s.\n", str);
+    printf("Reversed string: %s.\n", rev);
 
     return 0;
 }
